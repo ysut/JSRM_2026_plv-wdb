@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プラノバール後の消退出血時期｜補足資料</title>
+<meta name="description" content="第71回日本生殖医学会学術講演会 ポスター発表「プラノバール内服終了後の消退出血時期の確率予測モデル」の補足資料">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --ink: #1f2a37;
+    --ink2: #4a5361;
+    --muted: #6b7280;
+    --line: #e3dfd6;
+    --blue: #1f62b8;
+    --blue-soft: #e8f1fc;
+    --accent: #b9471b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141a22;
+      --surface: #1d2530;
+      --ink: #e8ebef;
+      --ink2: #c2c8d0;
+      --muted: #9aa3ad;
+      --line: #2e3845;
+      --blue: #8bb8f2;
+      --blue-soft: #1c2b40;
+      --accent: #f2996f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 0 16px 64px; }
+  header { padding: 48px 0 24px; border-bottom: 1px solid var(--line); }
+  .meeting { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+  h1 { font-size: clamp(24px, 4vw, 34px); line-height: 1.4; margin: 0 0 12px; }
+  .authors { color: var(--ink2); margin: 0; }
+  nav { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 16px 0; font-size: 15px; }
+  nav a { color: var(--blue); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  h2 {
+    font-size: 24px;
+    margin: 56px 0 16px;
+    padding-top: 8px;
+    border-top: 3px solid var(--ink);
+  }
+  h3 { font-size: 19px; margin: 32px 0 8px; }
+  p { margin: 0 0 12px; }
+  .finding {
+    background: var(--blue-soft);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 32px 0 8px;
+    font-size: clamp(19px, 2.6vw, 24px);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .finding .late { color: var(--accent); }
+  figure { margin: 24px 0; }
+  /* Figures are transparent PNGs with dark text, so they always sit on white */
+  .plot { background: #ffffff; border-radius: 12px; padding: 12px; border: 1px solid var(--line); }
+  .plot img { display: block; width: 100%; height: auto; }
+  figcaption { color: var(--ink2); font-size: 15px; margin-top: 8px; }
+  .zoom-hint { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+  figcaption b { color: var(--ink); }
+  .numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 16px 0; }
+  .num { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .num .label { color: var(--muted); font-size: 14px; }
+  .num .value { font-size: 38px; font-weight: 700; line-height: 1.2; }
+  .num .ci { color: var(--ink2); font-size: 14px; }
+  .num.late .value { color: var(--accent); }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 8px 24px; }
+  .grid2 figure { margin: 12px 0; }
+  ol, ul { padding-left: 1.4em; margin: 0 0 12px; }
+  li { margin-bottom: 6px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .card h3 { margin-top: 0; }
+  .card ul { font-size: 15px; }
+  .note { color: var(--ink2); font-size: 15px; }
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <p class="meeting">第71回日本生殖医学会学術講演会（2026年・秋田）ポスター発表　補足資料</p>
+  <h1>プラノバール内服終了後の消退出血時期の確率予測モデル</h1>
+  <p class="authors">［演者名］（［所属］）</p>
+</header>
+
+<nav aria-label="目次">
+  <a href="#result">主な結果</a>
+  <a href="#methods">方法</a>
+  <a href="#details">解析の詳細</a>
+  <a href="#discussion">考察</a>
+  <a href="#notes">注記</a>
+</nav>
+
+<div class="finding">
+  プラノバール終了後の消退出血は、7日目までに3人に2人、14日目までに約9割。<br>
+  <span class="late">8人に1人は15日目以降</span>にずれ込み、その時期は年齢・投与日数・開始日では予測できなかった。
+</div>
+
+<h2 id="result">主な結果</h2>
+<p class="zoom-hint">図をタップ（クリック）すると、元の大きさで開きます。</p>
+
+<h3>内服終了後 X 日目までに出血が始まる確率</h3>
+<div class="numbers">
+  <div class="num"><div class="label">1〜7日目</div><div class="value">65%</div><div class="ci">95%CI 53〜82%</div></div>
+  <div class="num"><div class="label">1〜14日目</div><div class="value">86%</div><div class="ci">95%CI 77〜95%</div></div>
+  <div class="num late"><div class="label">15日目以降</div><div class="value">12%</div><div class="ci">95%CI 3〜21%</div></div>
+  <div class="num"><div class="label">内服中</div><div class="value">2.6%</div><div class="ci">2/76周期</div></div>
+</div>
+<figure>
+  <div class="plot"><a href="assets/main1_cdf.png" title="元の大きさで開く"><img src="assets/main1_cdf.png" alt="内服終了後の日数ごとに、その日までに出血が始まる確率を示す累積曲線。7日目まで65%、14日目まで86%、15日目以降が12%。" loading="lazy"></a></div>
+  <figcaption><b>図1</b>　青線は2成分混合分布モデル、帯は患者単位のブートストラップ（500回）による95%信頼区間、灰色の階段は実際の76周期の累積。確率は内服中に出血する確率（2.6%）を差し引いた値。内服終了翌日を1日目とする。出血開始日の中央値は6日目、80%予測区間は3〜16日目（内服終了後に出血した場合）。</figcaption>
+</figure>
+
+<h3>年齢・投与日数・開始日では出血日を予測できない</h3>
+<figure>
+  <div class="plot"><a href="assets/main2_covariates.png" title="元の大きさで開く"><img src="assets/main2_covariates.png" alt="投与日数、開始時の月経日数、年齢のそれぞれに対する出血日の散布図。どの因子とも関連がない。" loading="lazy"></a></div>
+  <figcaption><b>図2</b>　投与日数、開始時の月経日数、年齢のいずれも出血日と関連しなかった（Spearman ρ = −0.01、−0.03、−0.02）。これらの因子を加えたモデルは予測精度が下がり、入れ子交差検証では80回の選択で一度も選ばれなかった。</figcaption>
+</figure>
+
+<h2 id="methods">方法</h2>
+
+<h3>対象</h3>
+<p>単施設の後ろ向き研究。［期間］にプラノバール（ノルゲストレル 0.5 mg・エチニルエストラジオール 0.05 mg 配合剤）を内服した、生殖補助医療中の20例・76周期（24〜48歳、1例あたり1〜17周期）。出血開始日は内服終了翌日を1日目として数えた。本研究は［倫理審査委員会名］の承認（承認番号［ ］）を得た。</p>
+
+<h3>解析</h3>
+<ol>
+  <li><b>分布モデル:</b> 出血開始日を、2つの山の混合分布で表した。数日後に来る「典型」と、2〜3週後に来る「遅延」の2つである。</li>
+  <li><b>因子の効果:</b> 投与日数・開始時の月経日数・年齢の効果を、患者ごとのばらつきを含めた階層ベイズモデルで推定した。</li>
+  <li><b>予測性能:</b> 患者単位の交差検証で評価した。1例を除いた19例でモデルを作り、除いた1例で採点する操作を20例分繰り返した。指標は RPS（予測の誤差、日）、対数スコア、時間窓ごとの較正とした。</li>
+  <li><b>入れ子の交差検証:</b> 分布の形6種（対数正規、ガンマ、ワイブル、対数ロジスティック、負の二項、2成分混合）と因子の有無を組み合わせた12候補から、19例だけで選び直して採点した。データを見て形を選んだことによる楽観を見積もるためである（図3）。</li>
+  <li><b>臨床で伝える確率:</b> （1 − 内服中出血の割合）× モデルの確率とした。</li>
+</ol>
+<figure>
+  <div class="plot"><a href="assets/flow_nested_cv.png" title="元の大きさで開く"><img src="assets/flow_nested_cv.png" alt="入れ子の交差検証の流れ。外側で1例を隠し、内側では残り19例の中だけで12候補を採点して1つを選び、隠した1例を予測して採点する。" loading="lazy"></a></div>
+  <figcaption><b>図3</b>　入れ子の交差検証。分布の形と因子の選択も、隠した1例のデータを使わずに行う。</figcaption>
+</figure>
+
+<h2 id="details">解析の詳細</h2>
+<div class="grid2">
+  <figure>
+    <div class="plot"><a href="assets/r1_distribution.png" title="元の大きさで開く"><img src="assets/r1_distribution.png" alt="出血開始日の分布と、2つの山のモデル・1つの山のモデル" loading="lazy"></a></div>
+    <figcaption><b>図4　出血開始日の分布</b>　中央値6日目（四分位範囲5〜8日、範囲1〜43日）。典型（中央値5.6日）と遅延（中央値19.9日、全体の14%）の2つの山で表した。</figcaption>
+  </figure>
+  <figure>
+    <div class="plot"><a href="assets/r2_bayes.png" title="元の大きさで開く"><img src="assets/r2_bayes.png" alt="投与日数・開始時の月経日数・年齢による遅延出血のオッズ比" loading="lazy"></a></div>
+    <figcaption><b>図5　因子の効果（階層ベイズ）</b>　遅延出血のオッズ比（1SDあたり、95%信用区間）は、投与日数 1.04［0.36〜2.79］、開始時の月経日数 0.66［0.20〜2.38］、年齢 0.71［0.20〜2.32］で、いずれも1をまたいだ。患者間のばらつきは大きかった（潜在尺度の ICC 0.38［0.00〜0.66］）。</figcaption>
+  </figure>
+  <figure>
+    <div class="plot"><a href="assets/r3_cv.png" title="元の大きさで開く"><img src="assets/r3_cv.png" alt="基準モデルと比べた予測誤差の増加" loading="lazy"></a></div>
+    <figcaption><b>図6　予測性能（患者単位の交差検証）</b>　基準（2つの山）と比べ、3因子を加えると予測誤差が0.11〜0.12日増え、AI（ランダムフォレスト）では0.33日増えた。形の選択まで交差検証の中で行う入れ子交差検証でも、増加は0.04日［0.01〜0.08］にとどまった。</figcaption>
+  </figure>
+  <figure>
+    <div class="plot"><a href="assets/r4_calibration.png" title="元の大きさで開く"><img src="assets/r4_calibration.png" alt="時間窓ごとの予測確率と実際の割合" loading="lazy"></a></div>
+    <figcaption><b>図7　時間窓ごとの較正</b>　2つの山は、7日目までを66%（実際70%）、15日目以降を12%（実際11%）と予測した。1つの山（抄録のモデル）は、7日目までを59%と過小評価した。</figcaption>
+  </figure>
+</div>
+
+<h2 id="discussion">考察</h2>
+<div class="cards">
+  <section class="card">
+    <h3>Implications</h3>
+    <ul>
+      <li>「多くは1週間以内（3人に2人）、2週間以内に約9割、ただし8人に1人は15日目以降」と、確率で患者に説明できる。</li>
+      <li>出血時期は内服終了日を起点に決まり、投与日数・開始日・年齢によらなかった。終了日から逆算して治療の予定を組めば、全員に同じ確率表を使える。</li>
+      <li>15日目以降の出血も12%は起こり得る。2週間を過ぎても出血がない場合に、「想定の範囲内」として説明する目安になる。</li>
+    </ul>
+  </section>
+  <section class="card">
+    <h3>Limitations</h3>
+    <ul>
+      <li>単施設の後ろ向き研究で、20例・76周期と少ない。外部のデータでは検証していない。</li>
+      <li>遅延出血14周期のうち10周期（71%）が2例に集中していた。2つの山の構造は少数の患者に支えられており、分布の形の選択は判定基準によって変わった。</li>
+      <li>分布の形はデータを見て選んだ。ただし、入れ子の交差検証で、それによる楽観は小さいことを確認した。</li>
+      <li>対象は生殖補助医療中の患者に限られ、一般の月経移動にそのまま当てはまるかはわからない。内服中の出血は2周期のみで、予測の対象にできなかった。</li>
+    </ul>
+  </section>
+  <section class="card">
+    <h3>Future directions</h3>
+    <ul>
+      <li>多施設・前向きの症例集積で、今回の確率表を検証する。</li>
+      <li>同じ患者の過去の周期を使った個別化。前向きの評価では対数スコアが改善した（+0.15［0.01〜0.43］）。</li>
+      <li>遅延出血に関わる要因を記録して検討する。今回は扱っていない、内服開始時のホルモン値や卵胞の状態などである。</li>
+      <li>確率表と計算ツールを臨床で使い、有用性を評価する。</li>
+    </ul>
+  </section>
+</div>
+
+<h2 id="notes">注記</h2>
+<ul class="note">
+  <li>抄録提出後に解析を更新し、2成分混合分布と入れ子の交差検証を追加しました。そのため、確率の数値は抄録（対数正規分布: 7日以内58%、14日以内90%）と異なります。</li>
+  <li>このページは学会発表の補足資料です。個々の患者さんの診療方針は、担当医の判断によります。</li>
+  <li>お問い合わせ: ［連絡先］</li>
+</ul>
+
+<footer>
+  最終更新: 2026年10月30日
+</footer>
+
+</main>
+</body>
+</html>
